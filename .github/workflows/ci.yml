@@ -14,14 +14,14 @@ jobs:
   typescript:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: docker compose build node
       - run: docker compose run --rm node pnpm install --frozen-lockfile
       - run: docker compose run --rm node pnpm lint
       - run: docker compose run --rm node pnpm typecheck
       - run: docker compose run --rm node pnpm test
       - run: docker compose run --rm node pnpm build
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: sketchup-extension
           path: apps/sketchup-extension/dist/*.rbz
@@ -30,7 +30,7 @@ jobs:
   ruby:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: docker compose build ruby
       - run: docker compose run --rm -e BUNDLE_FROZEN=true ruby bundle install
       - run: docker compose run --rm ruby bundle exec rubocop
