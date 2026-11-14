@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+*.rbz
+.DS_Store
+apps/sketchup-extension/src/crender_ia/ui/
+apps/sketchup-extension/.bundle/

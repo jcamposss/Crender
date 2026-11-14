@@ -1,0 +1,19 @@
+services:
+  node:
+    build:
+      context: .
+      dockerfile: docker/node.Dockerfile
+    working_dir: /repo
+    volumes:
+      - .:/repo
+  ruby:
+    build:
+      context: .
+      dockerfile: docker/ruby.Dockerfile
+    working_dir: /repo/apps/sketchup-extension
+    volumes:
+      - .:/repo
+      - bundle:/usr/local/bundle
+
+volumes:
+  bundle:
