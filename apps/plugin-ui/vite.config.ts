@@ -18,7 +18,8 @@ export default defineConfig({
   build: {
     outDir: '../sketchup-extension/src/crender_ia/ui',
     emptyOutDir: true,
-    // SketchUp 2022 embeds an older Chromium; ES2019 keeps the bundle loadable there.
+    // Older SketchUp versions embed an old Chromium; ES2019 keeps the syntax loadable there.
+    // Vite does not polyfill DOM APIs, so newer DOM methods must be avoided by hand.
     target: 'es2019',
     modulePreload: false,
     rolldownOptions: {
