@@ -1,0 +1,11 @@
+AllCops:
+  # SketchUp 2022 and 2023 embed Ruby 2.7; code must parse there.
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'src/crender_ia/ui/**/*'
+
+Style/Documentation:
+  Exclude:
+    - 'test/**/*'
