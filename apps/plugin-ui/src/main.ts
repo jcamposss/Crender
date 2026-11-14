@@ -13,4 +13,5 @@ heading.textContent = messages.appTitle;
 const status = document.createElement('p');
 status.textContent = messages.installedMessage;
 
-app.replaceChildren(heading, status);
+// SketchUp 2021's embedded Chromium predates Element.replaceChildren (Chrome 86).
+app.append(heading, status);
